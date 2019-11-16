@@ -10,5 +10,5 @@ function DeleteBtn(props) {
     </span>
   );
 }
-
+console.log("working");
 export default DeleteBtn;
