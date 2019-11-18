@@ -21,7 +21,7 @@ const Nav = () => {
               </a>
             </li>
             <li>
-              <a href="rewards">
+              <a href="achievements">
                 <i className="material-icons black-text">stars</i>
               </a>
             </li>
