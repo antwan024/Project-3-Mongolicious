@@ -1,39 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Achievements from "./pages/Achievements";
-import Events from "./pages/Events";
-// import Home from "./pages/Home";
-// import Detail from "./pages/Detail";
+import Achievement from "./pages/Dashboard";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <div>
         <Nav />
-        <Switch>
-        <Route exact path="/" >
-              <Home />
-          </ Route>
-              
-          <Route exact path="/achievements" component={Achievements} />
-          <Route exact path="/achievements/:id" component={Achievements} />
-          <Route exact path="/events" component={Events} />
-          <Route component={NoMatch} />
-        </Switch>
+        <div className="body">
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Achievement} />
+              <Route exact path="/achievements/:id" component={Achievement} />
+              <Route component={NoMatch} />
+            </Switch>
+          </div>
+        </div>
+        <Footer />
       </div>
     </Router>
-  );
-}
-
-
-function Home() {
-  return (
-    <div>
-      
-      <h5>Welcome to having a Best Life</h5>
-    </div>
   );
 }
 

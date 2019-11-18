@@ -1,13 +1,43 @@
 import React from "react";
+// import "./styles.css";
 
-function Nav() {
+const Nav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-      <a className="navbar-brand" href="/">
-        Best Life
-      </a>
-    </nav>
+    <div>
+      <nav>
+        <div className="nav-wrapper white ">
+          <a href="/dashboard" className="brand-logo center black-text">
+            Best Life
+          </a>
+          <ul id="nav-mobile" className="left hide-on-med-and-down">
+            <li>
+              <a href="/dashboard">
+                <i className="material-icons black-text">home</i>
+              </a>
+            </li>
+            <li>
+              <a href="achievements" className="black-text">
+                <i className="material-icons black-text">check_circle</i>
+              </a>
+            </li>
+            <li>
+              <a href="rewards">
+                <i className="material-icons black-text">stars</i>
+              </a>
+            </li>
+          </ul>
+          <ul id="nav-mobile" className="right">
+            <li>
+              <a class="waves-effect waves-light btn-small black">Login</a>
+            </li>
+            <li>
+              <a class="waves-effect waves-light btn-small black">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   );
-}
+};
 
 export default Nav;
