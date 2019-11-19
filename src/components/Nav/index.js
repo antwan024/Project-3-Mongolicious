@@ -5,7 +5,7 @@ const Nav = () => {
   return (
       <div>
         <nav>
-          <div className="nav-wrapper white ">
+          <div className="nav-wrapper blue ">
             <a href="/" className="brand-logo center black-text">
               Best Life
             </a>
