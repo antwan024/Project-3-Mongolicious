@@ -28,10 +28,14 @@ const Nav = () => {
             </ul>
             <ul id="nav-mobile" className="right">
               <li>
-                <a class="waves-effect waves-light btn-small black">Login</a>
+              <a href="/Login">
+                  <i className="waves-effect waves-light btn-small black">Login</i>
+                </a>
               </li>
               <li>
-                <a class="waves-effect waves-light btn-small black">Sign Up</a>
+              <a href="/Signup">
+                  <i className="waves-effect waves-light btn-small black">Sign Up</i>
+                </a>
               </li>
             </ul>
           </div>
