@@ -7,7 +7,7 @@ class Dashboard extends Component {
 
       state = {
       events: [],
-      eventPoints: 0,
+      eventPoints: "",
       summary: "",
       date: "",
       voucherCode: ""
@@ -73,7 +73,13 @@ class Dashboard extends Component {
                         value={this.state.summary}
                         onChange={this.handleInputChange}
                         name="summary"
-                        placeholder="Summary (required)"
+                        placeholder="Enter Completed Event:"
+                    />
+                    <Input 
+                        value={this.state.eventPoints}
+                        onChange={this.handleInputChange}
+                        name="eventPoints"
+                        placeholder="Enter Points Earned:"
                     />
                     
                     <FormBtn 
