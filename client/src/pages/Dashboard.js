@@ -68,9 +68,7 @@ class Dashboard extends Component {
 
     getPoints = event => {
         event.preventDefault();
-        API.addPoints({
-            // totalPoints: this.state.totalPoints
-        })
+        API.addPoints()
         .then(res => this.loadEvents())
         .catch(err => console.log(err));
 
@@ -82,7 +80,9 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div>
+          <div>
+            <h2>Total Points: 0{this.getPoints}</h2>
+            <div className="col s9 m9">
                 <form>
                     <Input 
                         value={this.state.summary}
@@ -123,8 +123,9 @@ class Dashboard extends Component {
                   
                 </form>
 
-                <h2>Points: {this.getPoints}</h2>
+                <h2>Points: 0{this.getPoints}</h2>
                 <script src="./../src/misc/jquery.js"></script>
+            </div>
             </div>
             
         );

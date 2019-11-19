@@ -71,7 +71,7 @@ class SignIn extends Component {
     render() {
         return (
             <div>
-                <h1>Please sign in:</h1>
+                {/* <h1>Please sign in:</h1>
                 <form>
                     <Input 
                         value={this.state.summary}
@@ -92,7 +92,46 @@ class SignIn extends Component {
                         onClick={this.handleUserSubmit}
                     >Commit</FormBtn>
                   
+                </form> */}
+
+                <div class="container center-align">
+    <div class="row center-align">
+        <div class="col s12 m6 center-align" >
+            <div class="card blue light-3 center-align">
+                <div class="card-content white-text center-align">
+                    <span class="card-title">Log In</span>
+                </div>
+                <div class="card-action">
+
+                    <div class="row">
+                    <form>
+                    <Input 
+                        value={this.state.summary}
+                        onChange={this.handleInputChange}
+                        name="summary"
+                        placeholder="Enter Email:"
+                    />
+                    <Input 
+                        value={this.state.password}
+                        onChange={this.handleInputChange}
+                        name="password"
+                        placeholder="Enter Password:"
+                    />
+                    
+                    
+
+                    <FormBtn 
+                        onClick={this.handleUserSubmit}
+                    >Send</FormBtn>
+                  
                 </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                 
                 <script src="./../src/misc/jquery.js"></script>
             </div>

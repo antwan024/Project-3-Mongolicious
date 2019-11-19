@@ -70,7 +70,8 @@ class Events extends Component {
     render() {
         return (
           <div>
-            <div className="col s9 m6">
+            <h2>Total Points: 0{this.getPoints}</h2>
+            <div className="col s6 m6">
                 <form>
                     <Input 
                         value={this.state.summary}

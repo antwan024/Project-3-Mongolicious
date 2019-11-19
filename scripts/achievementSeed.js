@@ -10,28 +10,28 @@ mongoose.connect(
 const achievementSeed = [
   {
     type: "foodPoints",
-    achievementPoints: 10,
+    achievementPoints: 150,
     summary: "Earned a free lunch at Chipotle!",
     date: "2020-1-15",
     earned: false
   },
   {
     type: "eventPoints",
-    achievementPoints: 10,
+    achievementPoints: 1000,
     summary: "Earned a free Live Nation show!",
     date: "2019-12-19",
     earned: false
   },
   {
     type: "workoutPoints",
-    achievementPoints: 10,
+    achievementPoints: 500,
     summary: "Earned a free Yoga session!",
     date: "2019-12-15",
     earned: false
   },
   {
     type: "foodPoints",
-    achievementPoints: 10,
+    achievementPoints: 750,
     summary: "Earned a free culinary session at Cook St!",
     date: new Date(Date.now("<YYYY-mm-dd>")),
     earned: false

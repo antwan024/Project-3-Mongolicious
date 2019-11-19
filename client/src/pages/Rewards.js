@@ -50,6 +50,7 @@ class Achievement extends Component {
   render() {
     return (
       <div>
+        <h2>Total Points: 0{this.getPoints}</h2>
         <div className="row">
           <div className="col s9 m9">
             {this.state.achievements.map(achievement => (
@@ -67,13 +68,14 @@ class Achievement extends Component {
                     </a>
                   </div>
                   <span className="card-title">
-                    {achievement.achievementPoints} Points
+                    Use {achievement.achievementPoints} Points
                   </span>
                   {achievement.summary}
                 </AchievementCard>
               </Link>
             ))}
           </div>
+          
         </div>
       </div>
     );
