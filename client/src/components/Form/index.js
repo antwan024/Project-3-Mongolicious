@@ -7,7 +7,6 @@ export function Input(props) {
 
     <div class="input-field col s6">
         <input {...props } placeholder="Choose commitment:" />
-        <label for="first_name">First Name</label>
     </div>
 
  );
