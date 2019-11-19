@@ -1,13 +1,14 @@
 import React from "react";
 // import "./styles.css";
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <div>
       <nav>
         <div className="nav-wrapper white ">
           <a href="/dashboard" className="brand-logo center black-text">
-            Best Life
+            Best Life 
+            <p {...props} id="user" class="text-fix"></p>
           </a>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li>
@@ -28,10 +29,10 @@ const Nav = () => {
           </ul>
           <ul id="nav-mobile" className="right">
             <li>
-              <a class="waves-effect waves-light btn-small black">Login</a>
+              <a className="waves-effect waves-light btn-small black">Login</a>
             </li>
             <li>
-              <a class="waves-effect waves-light btn-small black">Sign Up</a>
+              <a className="waves-effect waves-light btn-small black">Sign Up</a>
             </li>
           </ul>
         </div>

@@ -14,3 +14,17 @@ export function ListItem({ children }) {
     </li>
   );
 }
+
+export function Dropdown({ children }) {
+  return (
+
+      <div class="input-field col s12 m6">
+          <select class="icons">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="" data-icon="images/sample-1.jpg">{children}</option>
+          </select>
+      <label></label>
+      </div>
+
+  );
+}

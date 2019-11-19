@@ -13,6 +13,11 @@ router
   .get(eventsController.findById)
   .put(eventsController.update)
   .delete(eventsController.remove);
+
+router
+    .route("/addPoints")
+    .get(eventsController.findAll)
+    .post(eventsController.create);
   
 
 module.exports = router;

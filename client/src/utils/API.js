@@ -29,8 +29,20 @@ export default {
   saveEvent: function(eventData) {
     return axios.post("/api/events", eventData);
   },
-  saveUserEvent: function(userEventData) {
-    return axios.post("/api/userEvents", userEventData);
+  eventTotalPoints: function() {
+    return axios.post("/api/events/addPoints")
+  },
+
+
+  saveUser: function(userData) {
+    return axios.post("/api/user", userData);
+  },
+  valUser: function(userData) {
+    return axios.get("/api/user", userData);
+  },
+  getUser: function(id) {
+    return axios.get("/api/user/" + id);
   }
+
 
 };

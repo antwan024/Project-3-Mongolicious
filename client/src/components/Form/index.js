@@ -6,7 +6,7 @@ export function Input(props) {
   return (
 
     <div class="input-field col s6">
-        <input {...props } placeholder="Choose commitment:" />
+        <input {...props }  />
     </div>
 
  );
@@ -24,5 +24,17 @@ export function FormBtn(props) {
       {props.children} </a>
   );
 }
+
+export function CalendarDate(props) {
+  return(
+    <div>
+      <input {...props} type="text" class="datepicker"></input>
+      
+    </div>
+    
+      
+  ); 
+}
+
 
 

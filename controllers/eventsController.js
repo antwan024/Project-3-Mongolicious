@@ -42,6 +42,7 @@ module.exports = {
     },
     addPoints: function(req, res) {
         db.Event
+            .find(req.query)
             .aggregate(
                 { $match: {
                     _id: "foo"

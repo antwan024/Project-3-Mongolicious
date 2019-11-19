@@ -13,4 +13,10 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
+router.route("/addPoints")
+  .get(userController.findAll)
+  .post(userController.create);
+
+
+
 module.exports = router;

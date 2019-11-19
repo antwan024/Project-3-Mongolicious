@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TaskInput from "../components/TaskInput";
 import { Input, FormBtn } from "../components/Form";
+import { Link } from "react-router-dom";
+import AchievementCard from "../components/AchievementCard";
 import API from "../utils/API";
 
 class Events extends Component {
@@ -67,6 +69,7 @@ class Events extends Component {
 
     render() {
         return (
+          <div>
             <div>
                 <form>
                     <Input 
@@ -82,6 +85,37 @@ class Events extends Component {
                   
                 </form>
             </div>
+
+            <div>
+                <div className="row">
+                  <div className="col s6 m6">
+                    {this.state.events.map(event => (
+                      <Link to={"/achievements/" + event._id}>
+                        <AchievementCard key={event._id}>
+                          <div className="card-image">
+                            <img src="/images/wellness.jpeg" />
+                            <a className="btn-floating halfway-fab waves-effect waves-light red">
+                              <i
+                                className="material-icons"
+                                onClick={() => this.deleteEvent(event._id)}
+                              >
+                                add
+                              </i>
+                            </a>
+                          </div>
+                          <span className="card-title">
+                            {event.eventPoints} Points
+                          </span>
+                          {event.summary}
+                        </AchievementCard>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+            </div>
+        </div>
+            
+
         );
     }
 }

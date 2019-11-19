@@ -11,6 +11,7 @@ const userSeed = [
     {
         name: "Antwan DuChez",
         email: "antwan@yomomashouse.com",
+        password:"123",
         totalEventPoints: 200, 
         totalFoodPoints: 400, 
         totalWorkoutPoints: 100,
@@ -19,6 +20,7 @@ const userSeed = [
     {
         name: "Jillian Anderson",
         email: "jillfunk@yahoo.com",
+        password:"123",
         totalEventPoints: 150, 
         totalFoodPoints: 225, 
         totalWorkoutPoints: 350,
@@ -26,6 +28,7 @@ const userSeed = [
     {
         name: "Jack Sparrow",
         email: "antwan@yomomashouse.com",
+        password:"123",
         totalEventPoints: 200, 
         totalFoodPoints: 400, 
         totalWorkoutPoints: 100,
@@ -33,6 +36,7 @@ const userSeed = [
     {
         name: "Dwayne Johnson",
         email: "therock@badass.com",
+        password:"123",
         totalEventPoints: 575, 
         totalFoodPoints: 450, 
         totalWorkoutPoints: 1000,

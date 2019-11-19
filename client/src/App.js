@@ -16,6 +16,7 @@ function App() {
         <Nav />
         <div className="body">
           <Switch>
+            <Route exact path="/" component={SignIn} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/user/:id" component={SignIn} />
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/achievements/:id" component={Achievement} />
             <Route component={NoMatch} />
           </Switch>
+          <script src="./../src/misc/jquery.js"></script>
         </div>
         <Footer />
       </div>

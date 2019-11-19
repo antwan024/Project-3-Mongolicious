@@ -1,58 +1,103 @@
 import React, { Component } from "react";
-import TaskInput from "../components/TaskInput";
+
+import { Input, FormBtn } from "../components/Form";
+
+import API from "../utils/API";
 
 class SignIn extends Component {
-  render() {
-    return (
-      
-        
-  <div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <input placeholder="Placeholder" id="first_name" type="text" class="validate"/>
-        <label for="first_name">First Name</label>
-      </div>
-      <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate"/>
-        <label for="last_name">Last Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input disabled value="I am not editable" id="disabled" type="text" class="validate"/>
-        <label for="disabled">Disabled</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="password" type="password" class="validate"/>
-        <label for="password">Password</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="email" type="email" class="validate"/>
-        <label for="email">Email</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        This is an inline input field:
-        <div class="input-field inline">
-          <input id="email_inline" type="email" class="validate"/>
-          <label for="email_inline">Email</label>
-          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
-      
+
+      state = {
+      user: [],
+      name: "",
+      email: "",
+      password: "",
+      date: "",
+      voucherCode: ""
+    };
+
+    componentDidMount() {
+      this.loadEvents();
+    }
+
+    loadEvents = () => {
+      API.getEvents()
+        .then(res =>
+          this.setState({ events: res.data, eventPoints: 0, summary: "", date: "", voucherCode: "" })
+        )
+        .catch(err => console.log(err));
+    };
+
+    deleteEvent = id => {
+      API.deleteEvent(id)
+        .then(res => this.loadEvents())
+        .catch(err => console.log(err));
+    };
+
+    handleInputChange = event => {
+      const { name, value } = event.target;
+      this.setState({
+        [name]: value
+      });
+    };
+
+    handleFormSubmit = event => {
+      event.preventDefault();
+      if (this.state.summary) {
+        API.saveEvent({
+          summary: this.state.summary,
+          date: this.state.date,
+          voucherCode: this.state.voucherCode,
+          eventPoints: this.state.eventPoints
+        })
+          .then(res => this.loadEvents())
+          .catch(err => console.log(err));
+      }
+    };
+
+    handleUserSubmit = event => {
+      event.preventDefault();
+      if (this.state.email) {
+        API.valUser({
+          email: this.state.email,
+          password: this.state.password
+        })
+          .then(res => this.loadUser())
+          .catch(err => console.log(err));
+      }
+    };
 
 
-    );
-  }
+
+    render() {
+        return (
+            <div>
+                <form>
+                    <Input 
+                        value={this.state.summary}
+                        onChange={this.handleInputChange}
+                        name="summary"
+                        placeholder="Enter Email:"
+                    />
+                    <Input 
+                        value={this.state.eventPoints}
+                        onChange={this.handleInputChange}
+                        name="eventPoints"
+                        placeholder="Enter Password:"
+                    />
+                    
+                    
+
+                    <FormBtn 
+                        onClick={this.handleUserSubmit}
+                    >Commit</FormBtn>
+                  
+                </form>
+                <script src="./../src/misc/jquery.js"></script>
+            </div>
+            
+        );
+    }
 }
 
 export default SignIn;
+

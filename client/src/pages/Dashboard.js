@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import TaskInput from "../components/TaskInput";
-import { Input, FormBtn } from "../components/Form";
+import { CalendarDate, Input, FormBtn } from "../components/Form";
+import {Dropdown} from "../components/List";
 import API from "../utils/API";
 
 class Dashboard extends Component {
 
       state = {
       events: [],
-      eventPoints: "",
+      eventPoints: null,
       summary: "",
       date: "",
       voucherCode: ""
@@ -54,9 +55,10 @@ class Dashboard extends Component {
 
     handleUserSubmit = event => {
       event.preventDefault();
-      if (this.state.summary) {
+      if (this.state.email) {
         API.saveUserEvent({
-          summary: this.state.summary
+          email: this.state.email,
+          password: this.state.password
         })
           .then(res => this.loadUserEvents())
           .catch(err => console.log(err));
@@ -81,13 +83,30 @@ class Dashboard extends Component {
                         name="eventPoints"
                         placeholder="Enter Points Earned:"
                     />
+                    <CalendarDate
+                        value={this.state.date}
+                        onChange={this.handleInputChange}
+                        name="date"
+                        placeholder="Date:"
+                    />
+
+                    <Dropdown
+                        value={this.state.summary}
+                        onChange={this.handleInputChange}
+                        name="summary"
+                        placeholder="Enter Completed Event:"
+
+                    />
                     
+
                     <FormBtn 
                         onClick={this.handleFormSubmit}
                     >Commit</FormBtn>
                   
                 </form>
+                <script src="./../src/misc/jquery.js"></script>
             </div>
+            
         );
     }
 }
