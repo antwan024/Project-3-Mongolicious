@@ -51,7 +51,7 @@ class Achievement extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col s6 m6">
+          <div className="col s9 m9">
             {this.state.achievements.map(achievement => (
               <Link to={"/achievements/" + achievement._id}>
                 <AchievementCard key={achievement._id}>

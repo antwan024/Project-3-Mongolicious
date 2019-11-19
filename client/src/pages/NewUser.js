@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import TaskInput from "../components/TaskInput";
-import { CalendarDate, Input, FormBtn } from "../components/Form";
-import {Dropdown, DropItem} from "../components/List";
+
+import { Input, FormBtn } from "../components/Form";
+
 import API from "../utils/API";
 
-class Dashboard extends Component {
+class NewUser extends Component {
 
       state = {
-          events: [],
-          eventPoints: "",
-          summary: "",
-          date: "",
-          voucherCode: "",
-          totalPoints:""
-      };
+      user: [],
+      name: "",
+      email: "",
+      password: "",
+      date: "",
+      voucherCode: ""
+    };
 
     componentDidMount() {
       this.loadEvents();
@@ -57,25 +57,13 @@ class Dashboard extends Component {
     handleUserSubmit = event => {
       event.preventDefault();
       if (this.state.email) {
-        API.saveUserEvent({
+        API.valUser({
           email: this.state.email,
           password: this.state.password
         })
-          .then(res => this.loadUserEvents())
+          .then(res => this.loadUser())
           .catch(err => console.log(err));
       }
-    };
-
-    getPoints = event => {
-        event.preventDefault();
-        API.addPoints({
-            // totalPoints: this.state.totalPoints
-        })
-        .then(res => this.loadEvents())
-        .catch(err => console.log(err));
-
-
-
     };
 
 
@@ -83,47 +71,34 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
+              <h1>Please sign in:</h1>
                 <form>
                     <Input 
                         value={this.state.summary}
                         onChange={this.handleInputChange}
                         name="summary"
-                        placeholder="Enter Completed Event:"
+                        placeholder="Enter Email:"
                     />
                     <Input 
-                        value={this.state.eventPoints}
+                        value={this.state.password}
                         onChange={this.handleInputChange}
-                        name="eventPoints"
-                        placeholder="Enter Points Earned:"
+                        name="password"
+                        placeholder="Enter Password:"
                     />
-                    <CalendarDate
-                        value={this.state.date}
+                    <Input 
+                        value={this.state.password}
                         onChange={this.handleInputChange}
-                        name="date"
-                        placeholder="Date:"
+                        name="name"
+                        placeholder="Enter Name:"
                     />
-
-                    <Dropdown>
-                        {this.state.events.map(event => (
-                            <DropItem key={event._id}>
-                              
-                                
-                                  Need: {event.eventPoints} , {event.summary}
-                                
-                              
-                              {/* <DeleteBtn onClick={() => this.deleteEvent(event._id)} /> */}
-                            </DropItem>
-                        ))}
-                    </Dropdown>
+                    
                     
 
                     <FormBtn 
-                        onClick={this.handleFormSubmit}
+                        onClick={this.handleUserSubmit}
                     >Commit</FormBtn>
                   
                 </form>
-
-                <h2>Points: {this.getPoints}</h2>
                 <script src="./../src/misc/jquery.js"></script>
             </div>
             
@@ -131,5 +106,5 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default NewUser;
 

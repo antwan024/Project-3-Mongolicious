@@ -71,6 +71,7 @@ class SignIn extends Component {
     render() {
         return (
             <div>
+                <h1>Please sign in:</h1>
                 <form>
                     <Input 
                         value={this.state.summary}
@@ -79,9 +80,9 @@ class SignIn extends Component {
                         placeholder="Enter Email:"
                     />
                     <Input 
-                        value={this.state.eventPoints}
+                        value={this.state.password}
                         onChange={this.handleInputChange}
-                        name="eventPoints"
+                        name="password"
                         placeholder="Enter Password:"
                     />
                     
@@ -92,6 +93,7 @@ class SignIn extends Component {
                     >Commit</FormBtn>
                   
                 </form>
+                
                 <script src="./../src/misc/jquery.js"></script>
             </div>
             

@@ -29,10 +29,10 @@ const Nav = (props) => {
           </ul>
           <ul id="nav-mobile" className="right">
             <li>
-              <a className="waves-effect waves-light btn-small black">Login</a>
+              <a href="/" className="waves-effect waves-light btn-small black">Login</a>
             </li>
             <li>
-              <a className="waves-effect waves-light btn-small black">Sign Up</a>
+              <a href="newUser" className="waves-effect waves-light btn-small black">Sign Up</a>
             </li>
           </ul>
         </div>

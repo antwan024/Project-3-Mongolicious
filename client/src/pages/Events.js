@@ -94,7 +94,7 @@ class Events extends Component {
 
             <div>
                 <div className="row">
-                  <div className="col s6 m6">
+                  <div className="col s12 m12">
                     {this.state.events.map(event => (
                       <Link to={"/events" + event._id}>
                         <AchievementCard key={event._id}>

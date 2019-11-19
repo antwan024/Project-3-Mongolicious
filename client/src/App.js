@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Events from "./pages/Events";
 import SignIn from "./pages/SignIn";
 import "./App.css";
+import NewUser from "./pages/NewUser";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <div className="body">
           <Switch>
             <Route exact path="/" component={SignIn} />
+            <Route exact path="/newuser" component={NewUser} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/user/:id" component={SignIn} />
