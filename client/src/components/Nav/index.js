@@ -22,7 +22,7 @@ const Nav = (props) => {
               </a>
             </li>
             <li>
-              <a href="achievements">
+              <a href="events">
                 <i className="material-icons black-text">stars</i>
               </a>
             </li>

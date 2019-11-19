@@ -11,7 +11,8 @@ class Dashboard extends Component {
       eventPoints: null,
       summary: "",
       date: "",
-      voucherCode: ""
+      voucherCode: "",
+      totalPoints:""
     };
 
     componentDidMount() {
@@ -63,6 +64,18 @@ class Dashboard extends Component {
           .then(res => this.loadUserEvents())
           .catch(err => console.log(err));
       }
+    };
+
+    getPoints = event => {
+        event.preventDefault();
+        API.addPoints({
+            totalPoints: this.state.totalPoints
+        })
+        .then(res => this.loadEvents())
+        .catch(err => console.log(err));
+
+
+
     };
 
 

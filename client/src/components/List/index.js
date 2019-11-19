@@ -15,16 +15,24 @@ export function ListItem({ children }) {
   );
 }
 
+
+
 export function Dropdown({ children }) {
   return (
 
-      <div class="input-field col s12 m6">
-          <select class="icons">
-              <option value="" disabled selected>Choose your option</option>
-              <option value="" data-icon="images/sample-1.jpg">{children}</option>
-          </select>
-      <label></label>
-      </div>
+    <div className="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      {children}
+    </select>
+    <label>Select sponsored event:</label>
+  </div>
 
+  );
+}
+
+export function DropItem({children}) {
+  return (
+        <option value="" selected>{children}</option>
   );
 }

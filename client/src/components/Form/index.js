@@ -5,7 +5,7 @@ import React from "react";
 export function Input(props) {
   return (
 
-    <div class="input-field col s6">
+    <div>
         <input {...props }  />
     </div>
 

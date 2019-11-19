@@ -29,7 +29,7 @@ export default {
   saveEvent: function(eventData) {
     return axios.post("/api/events", eventData);
   },
-  eventTotalPoints: function() {
+  addPoints: function() {
     return axios.post("/api/events/addPoints")
   },
 

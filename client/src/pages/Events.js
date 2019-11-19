@@ -70,13 +70,19 @@ class Events extends Component {
     render() {
         return (
           <div>
-            <div>
+            <div className="col s9 m6">
                 <form>
                     <Input 
                         value={this.state.summary}
                         onChange={this.handleInputChange}
                         name="summary"
                         placeholder="Summary (required)"
+                    />
+                    <Input 
+                        value={this.state.eventPoints}
+                        onChange={this.handleInputChange}
+                        name="points"
+                        placeholder="Enter points:"
                     />
                     
                     <FormBtn 
