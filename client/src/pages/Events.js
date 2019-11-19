@@ -96,10 +96,10 @@ class Events extends Component {
                 <div className="row">
                   <div className="col s6 m6">
                     {this.state.events.map(event => (
-                      <Link to={"/achievements/" + event._id}>
+                      <Link to={"/events" + event._id}>
                         <AchievementCard key={event._id}>
                           <div className="card-image">
-                            <img src="/images/wellness.jpeg" />
+                            <img src="/images/dog.jpg"/>
                             <a className="btn-floating halfway-fab waves-effect waves-light red">
                               <i
                                 className="material-icons"

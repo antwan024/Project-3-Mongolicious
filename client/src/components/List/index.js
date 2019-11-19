@@ -20,12 +20,12 @@ export function ListItem({ children }) {
 export function Dropdown({ children }) {
   return (
 
-    <div className="input-field col s12">
+    <div className="input-field col s8">
     <select>
       <option value="" disabled selected>Choose your option</option>
       {children}
     </select>
-    <label>Select sponsored event:</label>
+    <label></label>
   </div>
 
   );
@@ -33,6 +33,6 @@ export function Dropdown({ children }) {
 
 export function DropItem({children}) {
   return (
-        <option value="" selected>{children}</option>
+        <option value="">{children}</option>
   );
 }

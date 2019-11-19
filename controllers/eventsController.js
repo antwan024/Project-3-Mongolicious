@@ -42,16 +42,21 @@ module.exports = {
     },
     addPoints: function(req, res) {
         db.Event
-            .find(req.query)
             .aggregate(
-                { $match: {
-                    _id: "foo"
-                }},
             
-                { $project: {
-                    _id: 1,
-                    total: { $add: ["$eventPoints"] }
-                }}
+                [
+                    
+                    { 
+                        $group: { 
+                            _id: null, 
+                            total: { 
+                                $sum: "$eventPoints" 
+                            } 
+                        } 
+                    } 
+                    
+        
+                ] 
             )
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));

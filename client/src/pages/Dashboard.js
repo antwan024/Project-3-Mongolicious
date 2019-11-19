@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import TaskInput from "../components/TaskInput";
 import { CalendarDate, Input, FormBtn } from "../components/Form";
-import {Dropdown} from "../components/List";
+import {Dropdown, DropItem} from "../components/List";
 import API from "../utils/API";
 
 class Dashboard extends Component {
 
       state = {
-      events: [],
-      eventPoints: null,
-      summary: "",
-      date: "",
-      voucherCode: "",
-      totalPoints:""
-    };
+          events: [],
+          eventPoints: "",
+          summary: "",
+          date: "",
+          voucherCode: "",
+          totalPoints:""
+      };
 
     componentDidMount() {
       this.loadEvents();
@@ -103,13 +103,18 @@ class Dashboard extends Component {
                         placeholder="Date:"
                     />
 
-                    <Dropdown
-                        value={this.state.summary}
-                        onChange={this.handleInputChange}
-                        name="summary"
-                        placeholder="Enter Completed Event:"
-
-                    />
+                    <Dropdown>
+                        {this.state.events.map(event => (
+                            <DropItem key={event._id}>
+                              
+                                
+                                  Need: {event.eventPoints} , {event.summary}
+                                
+                              
+                              {/* <DeleteBtn onClick={() => this.deleteEvent(event._id)} /> */}
+                            </DropItem>
+                        ))}
+                    </Dropdown>
                     
 
                     <FormBtn 
@@ -117,6 +122,8 @@ class Dashboard extends Component {
                     >Commit</FormBtn>
                   
                 </form>
+
+                <h2>Points: {this.getPoints}</h2>
                 <script src="./../src/misc/jquery.js"></script>
             </div>
             

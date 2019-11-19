@@ -17,7 +17,7 @@ router
 router
     .route("/addPoints")
     .get(eventsController.findAll)
-    .post(eventsController.create);
+    .post(eventsController.addPoints);
   
 
 module.exports = router;
