@@ -3,7 +3,7 @@ import TaskInput from "../components/TaskInput";
 import { Input, FormBtn } from "../components/Form";
 import API from "../utils/API";
 
-class Dashboard extends Component {
+class Events extends Component {
 
       state = {
       events: [],
@@ -78,7 +78,7 @@ class Dashboard extends Component {
                     
                     <FormBtn 
                         onClick={this.handleFormSubmit}
-                    >Commit</FormBtn>
+                    >Commit!</FormBtn>
                   
                 </form>
             </div>
@@ -86,5 +86,5 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default Events;
 

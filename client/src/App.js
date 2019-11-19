@@ -5,6 +5,8 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
+import Events from "./pages/Events";
+import SignIn from "./pages/SignIn";
 import "./App.css";
 
 function App() {
@@ -14,7 +16,9 @@ function App() {
         <Nav />
         <div className="body">
           <Switch>
-            <Route exact path="/dashboard" compontent={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/events" component={Events} />
+            <Route exact path="/user/:id" component={SignIn} />
             <Route exact path="/achievements" component={Achievement} />
             <Route exact path="/achievements/:id" component={Achievement} />
             <Route component={NoMatch} />
