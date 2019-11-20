@@ -6,6 +6,7 @@ const Nav = () => {
       <div>
         <nav>
           <div className="nav-wrapper blue ">
+              <div className="container">
             <a href="/" className="brand-logo center black-text">
               Best Life
             </a>
@@ -38,6 +39,7 @@ const Nav = () => {
                 </a>
               </li>
             </ul>
+            </div>
           </div>
         </nav>
       </div>
